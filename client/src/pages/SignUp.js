@@ -61,6 +61,8 @@ const SignUp = () => {
             duration: 5000,
             isClosable: true,
           })
+          sessionStorage.setItem('token', JSON.stringify(res.data.token))
+
         }
       }
     } catch (error) {

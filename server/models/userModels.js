@@ -7,12 +7,12 @@ const jwt = require("jsonwebtoken");
 const userSchema = new mongoose.Schema({
     name:{
         type:String,
-        required:[true,"Please Enter Your Name"],
+        required:true,
         
     },
     email:{
         type:String,
-        required:[true,"Please Enter Your Email"],
+        required:true,
         unique:true,
         validate:[validator.isEmail, "Please Enter a valid Email"]
     },
@@ -22,18 +22,14 @@ const userSchema = new mongoose.Schema({
     },
     mobile:{
         type:String,
-        required:[true,"Please Enter Your Mobile"],   
+        required:true,   
         unique:true,
     },
     password:{
         type:String,
-        required:[true, "Please Enter your password"],
+        required:true,
         select:false,
-    },
-    pic: {
-        type : String,
-        default : "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg"
-    },
+    }
     
 });
 
